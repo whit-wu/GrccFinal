@@ -1,0 +1,113 @@
+<div *ngIf="!inputCustomerInfo">
+
+  <h3>Order your pizza!</h3>
+
+  <button (click)="addToPizzaOrder()">Add Pizza to Order</button>
+  <br />
+  <br />
+
+  <div *ngFor="let pizza of pizzas; let i=index">
+    <h4>Pizza {{i+1}}</h4>
+    <label>Crust Type: </label>
+
+    <select [(ngModel)]="pizza.crustType">
+      <option value="0">Hand Tossed</option>
+      <option value="1">Pan</option>
+      <option value="2">Thin Crust</option>
+      <option value="3">Cauliflower</option>
+    </select>
+    <br />
+
+    <label>Crust Flavor: </label>
+    <select [(ngModel)]="pizza.crustFlavor">
+      <option value="0">Plain</option>
+      <option value="1">Garlic Butter</option>
+      <option value="2">Ranch</option>
+      <option value="3">Cajun</option>
+    </select>
+    <br />
+
+    <label>Sauce Type</label>
+    <select [(ngModel)]="pizza.sauceType">
+      <option value="0">Marinara</option>
+      <option value="1">BBQ</option>
+      <option value="2">Pesto</option>
+    </select>
+
+    <br />
+
+    <div>
+      <p>Select your toppings</p>
+      <label>Extra Cheese: </label>
+      <input type="checkbox" [(ngModel)]="pizza.hasExtraCheese" />
+      <br />
+      <label>Pepperoni: </label>
+      <input type="checkbox" [(ngModel)]="pizza.hasPepperoni" />
+      <br />
+      <label>Olives: </label>
+      <input type="checkbox" [(ngModel)]="pizza.hasOlives" />
+      <br />
+      <label>Chicken: </label>
+      <input type="checkbox" [(ngModel)]="pizza.hasChicken" />
+      <br />
+
+      <label>Onions: </label>
+      <input type="checkbox" [(ngModel)]="pizza.hasOnions" />
+      <br />
+      <label>Pineapple: </label>
+      <input type="checkbox" [(ngModel)]="pizza.hasPineapple" />
+      <br />
+    </div>
+
+
+    <br />
+
+    <button (click)="removeFromPizzaOrder($event, i)">Remove Pizza</button>
+    <br />
+    <br />
+
+  </div>
+
+  <button *ngIf="pizzas.length > 0" (click)="proceedToCustomerInfo()">Payment Method</button>
+</div>
+
+<div *ngIf="inputCustomerInfo  ">
+  <h3>Input Payment Info</h3>
+  <br />
+  <label>First Name:</label>
+  <input type="text" name="fName" [(ngModel)]="customerOrder.firstName" />
+  <br />
+  <label>Last Name:</label>
+  <input type="text" name="lName" [(ngModel)]="customerOrder.lastName" />
+  <br />
+  <label>Middle Initial:</label>
+  <input type="text" name="MI" [(ngModel)]="customerOrder.middleInitial" />
+  <br />
+  <label>Address 1:</label>
+  <input type="text" name="addr1" [(ngModel)]="customerOrder.addr1" />
+  <br />
+  <label>Address 2:</label>
+  <input type="text" name="addr2" [(ngModel)]="customerOrder.addr2" />
+  <br />
+  <label>Apartment Number:</label>
+  <input type="text" name="aptNum" [(ngModel)]="customerOrder.aptNum" />
+  <br />
+  <label>State:</label>
+  <input type="text" name="state" [(ngModel)]="customerOrder.state" />
+  <br />
+  <label>ZIP:</label>
+  <input type="text" name="zip" [(ngModel)]="customerOrder.zip" />
+  <br />
+  <label>Email:</label>
+  <input type="text" name="email" [(ngModel)]="customerOrder.email" />
+  <br />
+  <label>Credit Card Number:</label>
+  <input type="text" name="ccNum" [(ngModel)]="customerOrder.ccNum" />
+  <br />
+  <label>Phone Number:</label>
+  <input type="text" name="phoneNum" [(ngModel)]="customerOrder.phoneNum" />
+
+  <br />
+  <button (click)="submit()">Submit Order</button>
+</div>
+
