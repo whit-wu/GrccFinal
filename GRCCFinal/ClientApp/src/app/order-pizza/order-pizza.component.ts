@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-order-pizza',
@@ -10,9 +12,14 @@ export class OrderPizzaComponent implements OnInit {
   pizzas: Pizza[] = [];
   customerOrder = new CustomerOrder();
   inputCustomerInfo: boolean = false;
-  constructor() { }
+ 
+  baseUrl: string
+
 
   ngOnInit(): void {
+  }
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.baseUrl = baseUrl;
   }
 
   addToPizzaOrder() {
@@ -34,6 +41,17 @@ export class OrderPizzaComponent implements OnInit {
   submit() {
     this.customerOrder.pizzas = this.pizzas;
     console.log(this.customerOrder);
+
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json;charset=UTF-8')
+
+    let options = { headers: headers };
+    
+
+    let url = "orderpizza/submitOrder";
+    
+    this.http.post(this.baseUrl + url, JSON.stringify(this.customerOrder), options).subscribe();
+
   }
 
 }
