@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRCCFinal", "GRCCFinal\GRCCFinal.csproj", "{950F5296-A514-4F1D-B189-6CBC225103D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRCCFinal", "GRCCFinal\GRCCFinal.csproj", "{950F5296-A514-4F1D-B189-6CBC225103D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Controllers\Model.csproj", "{86DAA00E-03C9-4B74-9FC7-810BBC0104EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{D5075948-3E79-4CF7-BACF-E773483CDFE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{950F5296-A514-4F1D-B189-6CBC225103D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{950F5296-A514-4F1D-B189-6CBC225103D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{950F5296-A514-4F1D-B189-6CBC225103D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86DAA00E-03C9-4B74-9FC7-810BBC0104EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86DAA00E-03C9-4B74-9FC7-810BBC0104EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86DAA00E-03C9-4B74-9FC7-810BBC0104EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86DAA00E-03C9-4B74-9FC7-810BBC0104EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5075948-3E79-4CF7-BACF-E773483CDFE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5075948-3E79-4CF7-BACF-E773483CDFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5075948-3E79-4CF7-BACF-E773483CDFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5075948-3E79-4CF7-BACF-E773483CDFE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
